@@ -36,17 +36,17 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val name = mutableListOf("Shanu","Kumar")
                     name+= listOf("priyam")
-                    BirthdayCard(name[0],name[1])
+                    BirthdayCard(name[0],name[1],modifier=Modifier)
                 }
             }
         }
     }
 }
 @Composable
-fun BirthdayCard (name:String, recepient : String){
+fun BirthdayCard (name:String, recepient : String, modifier: Modifier){
     BirthdayCardTheme{
         Surface{
-            Box {
+            Box(modifier) {
                 val img = painterResource(id = R.drawable.androidparty)
                 Image(
                     painter = img,//or we can use painter = painterResource (id=R.drawable.androidparty)
@@ -54,7 +54,8 @@ fun BirthdayCard (name:String, recepient : String){
                 )
                 Column(
                     verticalArrangement = Arrangement.Center,
-                    modifier = Modifier.padding(all = 10.dp)
+                    modifier = Modifier.padding(all = 10.dp).
+                    fillMaxSize()
                 ) {
                     Text(text = "Demo text to showcase ", fontSize = 36.sp, lineHeight = 50.sp)
                     Text(
@@ -81,5 +82,5 @@ fun BirthdayCard (name:String, recepient : String){
 fun BirthdayCardPreview(){
     val name = mutableListOf("Shanu","Kumar")
     name+= listOf("priyam")
-    BirthdayCard(name[0],name[1])
+    BirthdayCard(name[0],name[1], modifier = Modifier)
 }
