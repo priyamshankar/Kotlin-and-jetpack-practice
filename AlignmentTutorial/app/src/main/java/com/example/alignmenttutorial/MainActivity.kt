@@ -3,6 +3,8 @@ package com.example.alignmenttutorial
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -22,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    AlignFn(textToWrite = "Adam")
                 }
             }
         }
@@ -30,17 +32,24 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun AlignFn(textToWrite: String) {
+    AlignmentTutorialTheme {
+        Surface {
+            Row {
+                Column {
+
+                    for (x in 1..5) {
+                        Text(text = "$x : $textToWrite")
+                    }
+                }
+                Text(text = "hello $textToWrite", modifier = Modifier.fillMaxSize())
+            }
+        }
+    }
 }
 
-@Preview(showBackground = true)
+@Preview
 @Composable
-fun GreetingPreview() {
-    AlignmentTutorialTheme {
-        Greeting("Android")
-    }
+fun AlignFnPreview() {
+    AlignFn(textToWrite = "here")
 }
