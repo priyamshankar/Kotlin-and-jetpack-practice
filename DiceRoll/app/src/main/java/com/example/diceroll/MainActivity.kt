@@ -77,6 +77,11 @@ fun DiceRollImage(modifier: Modifier) {
     }
 }
 
+@Composable
+fun AnimationTime(){
+
+}
+
 @Preview
 @Composable
 fun DiceRollPreview() {
