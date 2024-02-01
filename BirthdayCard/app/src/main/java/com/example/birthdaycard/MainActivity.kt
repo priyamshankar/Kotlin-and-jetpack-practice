@@ -37,6 +37,7 @@ class MainActivity : ComponentActivity() {
                     val name = mutableListOf("Shanu","Kumar")
                     name+= listOf("priyam")
                     BirthdayCard(name[0],name[1],modifier=Modifier)
+                    println("hello world")
                 }
             }
         }
