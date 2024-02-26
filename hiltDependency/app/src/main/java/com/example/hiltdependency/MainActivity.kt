@@ -1,4 +1,4 @@
- add -package com.example.hiltdependency
+ package com.example.hiltdependency
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
