@@ -22,7 +22,18 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+//                    SharedPreferences sharedPrefObj = getSharedpref
+//                    Greeting("Android")
+                    val sharedPref = getSharedPreferences("mysharedPrefFile", MODE_PRIVATE)
+                    val sharedPrefEditObj = sharedPref.edit()
+                    sharedPrefEditObj.putString("name","priyam is the name")
+                    sharedPrefEditObj.putString("role", "Sde is the role")
+                    sharedPrefEditObj.apply()
+                    val sharedPrefGetObj = getSharedPreferences("mysharedPrefFile", MODE_PRIVATE)
+                    val name = sharedPrefGetObj.getString("name","")
+                    val role = sharedPrefGetObj.getString("role","")
+                    saveSharedPrefComposableTester(name = name, role = role)
+//                    saveSharedPrefComposableTester(name =sharedPrefGetObj.getString("name","") , role =sharedPrefGetObj.getString("role","") )
                 }
             }
         }
@@ -30,17 +41,9 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SharedPreferencesTheme {
-        Greeting("Android")
-    }
+fun saveSharedPrefComposableTester(name : String?, role : String?){
+//    SharedPreferences sharedPreferences = getSharedPreferences("")
+//    val sharedPref =
+    Text(text = "$name" +
+            " $role")
 }
