@@ -1,6 +1,7 @@
 package com.example.cleannotetakingapplication.featureNote.data.dataSource
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.cleannotetakingapplication.featureNote.domain.model.Note
@@ -18,6 +19,6 @@ interface NoteDao {
     @Insert
     fun insertNote(note:Note)
 
-    @Insert
-    fun deleteNOte(note:Note)
+    @Delete
+    fun deleteNOte(note:Note): Int
 }
