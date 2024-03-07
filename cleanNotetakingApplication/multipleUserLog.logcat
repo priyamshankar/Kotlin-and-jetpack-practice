@@ -1,0 +1,1522 @@
+{
+  "metadata": {
+    "device": {
+      "deviceId": "Pixel_7_Pro_API_34",
+      "name": "Pixel 7 Pro API 34",
+      "serialNumber": "emulator-5554",
+      "isOnline": true,
+      "release": "14",
+      "sdk": 34,
+      "featureLevel": 34,
+      "model": "",
+      "isEmulator": true
+    },
+    "filter": "",
+    "projectApplicationIds": [
+      "com.example.cleannotetakingapplication",
+      "com.example.cleannotetakingapplication.test"
+    ]
+  },
+  "logcatMessages": [
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7222,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "EGL_emulation",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 753000000
+        }
+      },
+      "message": "app_time_stats: avg\u003d775.77ms min\u003d1.52ms max\u003d21634.17ms count\u003d28"
+    },
+    {
+      "header": {
+        "logLevel": "WARN",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "ElapsedTimeUtils",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 860000000
+        }
+      },
+      "message": "getElapsedTime: sSuwFinishedTimeStamp is null"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 417,
+        "tid": 417,
+        "applicationId": "audioserver",
+        "processName": "audioserver",
+        "tag": "audioserver",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 861000000
+        }
+      },
+      "message": "FGS Logger Transaction failed"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 417,
+        "tid": 417,
+        "applicationId": "audioserver",
+        "processName": "audioserver",
+        "tag": "audioserver",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 861000000
+        }
+      },
+      "message": "-129"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 417,
+        "tid": 502,
+        "applicationId": "audioserver",
+        "processName": "audioserver",
+        "tag": "AudioFlinger",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 864000000
+        }
+      },
+      "message": "mixer(0x7eec089d8930) throttle end: throttle time(40)"
+    },
+    {
+      "header": {
+        "logLevel": "ERROR",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "Transition",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 865000000
+        }
+      },
+      "message": "Trying to add a ready-group twice: Display{#0 state\u003dON size\u003d1440x3120 ROTATION_0}"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 866000000
+        }
+      },
+      "message": "Transition requested: android.os.BinderProxy@eeb31d9 TransitionRequestInfo { type \u003d OPEN, triggerTask \u003d TaskInfo{userId\u003d0 taskId\u003d53 displayId\u003d0 isRunning\u003dtrue baseIntent\u003dIntent { act\u003dandroid.settings.SETTINGS flg\u003d0x14000000 cmp\u003dcom.android.settings/.homepage.SettingsHomepageActivity } baseActivity\u003dComponentInfo{com.android.settings/com.android.settings.homepage.SettingsHomepageActivity} topActivity\u003dComponentInfo{com.android.settings/com.android.settings.SubSettings} origActivity\u003dnull realActivity\u003dComponentInfo{com.android.settings/com.android.settings.homepage.SettingsHomepageActivity} numActivities\u003d6 lastActiveTime\u003d6550764 supportsMultiWindow\u003dtrue resizeMode\u003d1 isResizeable\u003dtrue minWidth\u003d-1 minHeight\u003d-1 defaultMinSize\u003d220 token\u003dWCT{android.window.IWindowContainerToken$Stub$Proxy@a2a879e} topActivityType\u003d1 pictureInPictureParams\u003dnull shouldDockBigOverlays\u003dfalse launchIntoPipHostTaskId\u003d-1 lastParentTaskIdBeforePip\u003d-1 displayCutoutSafeInsets\u003dRect(0, 144 - 0, 0) topActivityInfo\u003dActivityInfo{ba2127f com.android.settings.SubSettings} launchCookies\u003d[android.os.BinderProxy@1f01ee0] positionInParent\u003dPoint(0, 0) parentTaskId\u003d-1 isFocused\u003dtrue isVisible\u003dtrue isVisibleRequested\u003dtrue isSleeping\u003dfalse topActivityInSizeCompat\u003dfalse topActivityEligibleForLetterboxEducation\u003d false topActivityLetterboxed\u003d false isFromDoubleTap\u003d false topActivityLetterboxVerticalPosition\u003d -1 topActivityLetterboxHorizontalPosition\u003d -1 topActivityLetterboxWidth\u003d-1 topActivityLetterboxHeight\u003d-1 locusId\u003dnull displayAreaFeatureId\u003d1 cameraCompatControlState\u003dhidden}, remoteTransition \u003d null, displayChange \u003d null }"
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "ActivityTaskManager",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 872000000
+        }
+      },
+      "message": "START u0 {act\u003dandroid.intent.action.MAIN cmp\u003dcom.android.settings/.SubSettings (has extras)} with LAUNCH_MULTIPLE from uid 1000 (BAL_ALLOW_ALLOWLISTED_UID) result code\u003d0"
+    },
+    {
+      "header": {
+        "logLevel": "WARN",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "ElapsedTimeUtils",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 875000000
+        }
+      },
+      "message": "getElapsedTime: sSuwFinishedTimeStamp is null"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "ActivityEmbeddingUtils",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 892000000
+        }
+      },
+      "message": "isEmbeddingActivityEnabled \u003d true"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "SettingsActivity",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 897000000
+        }
+      },
+      "message": "Starting onCreate"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "SettingsActivity",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 899000000
+        }
+      },
+      "message": "Starting to set activity title"
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 420,
+        "tid": 420,
+        "applicationId": "surfaceflinger",
+        "processName": "surfaceflinger",
+        "tag": "BpBinder",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 899000000
+        }
+      },
+      "message": "onLastStrongRef automatically unlinking death recipients: "
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "SettingsActivity",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 899000000
+        }
+      },
+      "message": "Done setting title"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "SettingsActivity",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 899000000
+        }
+      },
+      "message": "Switching to fragment com.android.settings.users.UserSettings"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "SubSettings",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 899000000
+        }
+      },
+      "message": "Launching fragment com.android.settings.users.UserSettings"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "SettingsActivity",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 902000000
+        }
+      },
+      "message": "MetricsCategory is 96"
+    },
+    {
+      "header": {
+        "logLevel": "ERROR",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "UserRestrictionsUtils",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 902000000
+        }
+      },
+      "message": "Unknown restriction queried by uid 1000 (com.android.emulator.multidisplay et al): null"
+    },
+    {
+      "header": {
+        "logLevel": "ERROR",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "UserRestrictionsUtils",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 903000000
+        }
+      },
+      "message": "Unknown restriction queried by uid 1000 (com.android.emulator.multidisplay et al): null"
+    },
+    {
+      "header": {
+        "logLevel": "ERROR",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "UserRestrictionsUtils",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 904000000
+        }
+      },
+      "message": "Unknown restriction queried by uid 1000 (com.android.emulator.multidisplay et al): null"
+    },
+    {
+      "header": {
+        "logLevel": "ERROR",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "UserRestrictionsUtils",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 904000000
+        }
+      },
+      "message": "Unknown restriction queried by uid 1000 (com.android.emulator.multidisplay et al): null"
+    },
+    {
+      "header": {
+        "logLevel": "ERROR",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "UserRestrictionsUtils",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 905000000
+        }
+      },
+      "message": "Unknown restriction queried by uid 1000 (com.android.emulator.multidisplay et al): null"
+    },
+    {
+      "header": {
+        "logLevel": "ERROR",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "UserRestrictionsUtils",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 905000000
+        }
+      },
+      "message": "Unknown restriction queried by uid 1000 (com.android.emulator.multidisplay et al): null"
+    },
+    {
+      "header": {
+        "logLevel": "ERROR",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "UserRestrictionsUtils",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 907000000
+        }
+      },
+      "message": "Unknown restriction queried by uid 1000 (com.android.emulator.multidisplay et al): null"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 938000000
+        }
+      },
+      "message": "getUserSwitchability-0"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 938000000
+        }
+      },
+      "message": "TM.isInCall"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 938000000
+        }
+      },
+      "message": "hasUserRestriction-DISALLOW_USER_SWITCH"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 938000000
+        }
+      },
+      "message": "getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 938000000
+        }
+      },
+      "message": "isUserUnlocked-USER_SYSTEM"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 943000000
+        }
+      },
+      "message": "getUserSwitchability-0"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 943000000
+        }
+      },
+      "message": "TM.isInCall"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 943000000
+        }
+      },
+      "message": "hasUserRestriction-DISALLOW_USER_SWITCH"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 943000000
+        }
+      },
+      "message": "getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 943000000
+        }
+      },
+      "message": "isUserUnlocked-USER_SYSTEM"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "SettingsActivity",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 943000000
+        }
+      },
+      "message": "Executed frag manager pendingTransactions"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "SettingsActivity",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 945000000
+        }
+      },
+      "message": "MetricsCategory is 96"
+    },
+    {
+      "header": {
+        "logLevel": "WARN",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "ElapsedTimeUtils",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 954000000
+        }
+      },
+      "message": "getElapsedTime: sSuwFinishedTimeStamp is null"
+    },
+    {
+      "header": {
+        "logLevel": "WARN",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "ElapsedTimeUtils",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 961000000
+        }
+      },
+      "message": "getElapsedTime: sSuwFinishedTimeStamp is null"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 8332,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "SettingsActivity",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 971000000
+        }
+      },
+      "message": "No enabled state changed, skipping updateCategory call"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "CategoryMixin",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 973000000
+        }
+      },
+      "message": "Skip categories update"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 1350,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "CoreBackPreview",
+        "timestamp": {
+          "seconds": 1709534458,
+          "nanos": 978000000
+        }
+      },
+      "message": "Window{88db59b u0 com.android.settings/com.android.settings.SubSettings}: Setting back callback OnBackInvokedCallbackInfo{mCallback\u003dandroid.window.IOnBackInvokedCallback$Stub$Proxy@750d111, mPriority\u003d-1, mIsAnimationCallback\u003dfalse}"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 417,
+        "tid": 502,
+        "applicationId": "audioserver",
+        "processName": "audioserver",
+        "tag": "audioserver",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 28000000
+        }
+      },
+      "message": "FGS Logger Transaction failed"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 417,
+        "tid": 502,
+        "applicationId": "audioserver",
+        "processName": "audioserver",
+        "tag": "audioserver",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 28000000
+        }
+      },
+      "message": "-129"
+    },
+    {
+      "header": {
+        "logLevel": "ERROR",
+        "pid": 7203,
+        "tid": 7222,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "OpenGLRenderer",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 37000000
+        }
+      },
+      "message": "Unable to match the desired swap behavior."
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 560,
+        "tid": 584,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "ActivityTaskManager",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 105000000
+        }
+      },
+      "message": "Displayed com.android.settings/.SubSettings for user 0: +240ms"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 105000000
+        }
+      },
+      "message": "onTransitionReady android.os.BinderProxy@eeb31d9: {id\u003d61 t\u003dOPEN f\u003d0x0 trk\u003d0 r\u003d[0@Point(0, 0)] c\u003d[{null m\u003dOPEN f\u003dIN_TASK_WITH_EMBEDDED_ACTIVITY|FILLS_TASK leash\u003dSurface(name\u003dActivityRecord{ce1c208 u0 com.android.settings/.SubSettings)/@0x2dec24c sb\u003dRect(0, 0 - 0, 0) eb\u003dRect(0, 0 - 1440, 3120) d\u003d-1-\u003e0 r\u003d-1-\u003e0:-1},{null m\u003dTO_BACK f\u003dIN_TASK_WITH_EMBEDDED_ACTIVITY|FILLS_TASK leash\u003dSurface(name\u003dActivityRecord{2769085 u0 com.android.settings/.SubSettings)/@0xad41295 sb\u003dRect(0, 0 - 1440, 3120) eb\u003dRect(0, 0 - 1440, 3120) d\u003d0}]}"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 105000000
+        }
+      },
+      "message": "Playing animation for (#61)android.os.BinderProxy@eeb31d9@0"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 560,
+        "tid": 584,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "WindowManager",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 105000000
+        }
+      },
+      "message": "Sent Transition #61 createdAt\u003d03-04 12:10:58.863 via request\u003dTransitionRequestInfo { type \u003d OPEN, triggerTask \u003d TaskInfo{userId\u003d0 taskId\u003d53 displayId\u003d0 isRunning\u003dtrue baseIntent\u003dIntent { act\u003dandroid.settings.SETTINGS flg\u003d0x14000000 cmp\u003dcom.android.settings/.homepage.SettingsHomepageActivity } baseActivity\u003dComponentInfo{com.android.settings/com.android.settings.homepage.SettingsHomepageActivity} topActivity\u003dComponentInfo{com.android.settings/com.android.settings.SubSettings} origActivity\u003dnull realActivity\u003dComponentInfo{com.android.settings/com.android.settings.homepage.SettingsHomepageActivity} numActivities\u003d6 lastActiveTime\u003d6550764 supportsMultiWindow\u003dtrue resizeMode\u003d1 isResizeable\u003dtrue minWidth\u003d-1 minHeight\u003d-1 defaultMinSize\u003d220 token\u003dWCT{RemoteToken{92441d8 Task{7ff4a7 #53 type\u003dstandard A\u003d1000:com.android.settings.root}}} topActivityType\u003d1 pictureInPictureParams\u003dnull shouldDockBigOverlays\u003dfalse launchIntoPipHostTaskId\u003d-1 lastParentTaskIdBeforePip\u003d-1 displayCutoutSafeInsets\u003dRect(0, 144 - 0, 0) topActivityInfo\u003dActivityInfo{f539149 com.android.settings.SubSettings} launchCookies\u003d[android.os.BinderProxy@c7f7bd8] positionInParent\u003dPoint(0, 0) parentTaskId\u003d-1 isFocused\u003dtrue isVisible\u003dtrue isVisibleRequested\u003dtrue isSleeping\u003dfalse topActivityInSizeCompat\u003dfalse topActivityEligibleForLetterboxEducation\u003d false topActivityLetterboxed\u003d false isFromDoubleTap\u003d false topActivityLetterboxVerticalPosition\u003d -1 topActivityLetterboxHorizontalPosition\u003d -1 topActivityLetterboxWidth\u003d-1 topActivityLetterboxHeight\u003d-1 locusId\u003dnull displayAreaFeatureId\u003d1 cameraCompatControlState\u003dhidden}, remoteTransition \u003d null, displayChange \u003d null }"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 560,
+        "tid": 584,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "WindowManager",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 105000000
+        }
+      },
+      "message": "    startWCT\u003dWindowContainerTransaction { changes \u003d {} hops \u003d [] errorCallbackToken\u003dnull taskFragmentOrganizer\u003dnull }"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 560,
+        "tid": 584,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "WindowManager",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 105000000
+        }
+      },
+      "message": "    info\u003d{id\u003d61 t\u003dOPEN f\u003d0x0 trk\u003d0 r\u003d[0@Point(0, 0)] c\u003d[{null m\u003dOPEN f\u003dIN_TASK_WITH_EMBEDDED_ACTIVITY|FILLS_TASK leash\u003dSurface(name\u003dActivityRecord{ce1c208 u0 com.android.settings/.SubSettings)/@0x4633d13 sb\u003dRect(0, 0 - 0, 0) eb\u003dRect(0, 0 - 1440, 3120) d\u003d-1-\u003e0 r\u003d-1-\u003e0:-1},{null m\u003dTO_BACK f\u003dIN_TASK_WITH_EMBEDDED_ACTIVITY|FILLS_TASK leash\u003dSurface(name\u003dActivityRecord{2769085 u0 com.android.settings/.SubSettings)/@0x9eafdf2 sb\u003dRect(0, 0 - 1440, 3120) eb\u003dRect(0, 0 - 1440, 3120) d\u003d0}]}"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 105000000
+        }
+      },
+      "message": " try handler com.android.wm.shell.transition.DefaultMixedHandler@b13ca92"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 105000000
+        }
+      },
+      "message": " try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@e11ec63"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 105000000
+        }
+      },
+      "message": " try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@b3a0060"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 106000000
+        }
+      },
+      "message": " try handler com.android.wm.shell.recents.RecentsTransitionHandler@e0f9919"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "ShellRecents",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 106000000
+        }
+      },
+      "message": "RecentsTransitionHandler.startAnimation: no controller found"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 106000000
+        }
+      },
+      "message": " try handler com.android.wm.shell.pip.PipTransition@f9ffdde"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 106000000
+        }
+      },
+      "message": " try handler com.android.wm.shell.splitscreen.StageCoordinator@e2cebbf"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 106000000
+        }
+      },
+      "message": " try handler com.android.wm.shell.transition.RemoteTransitionHandler@daec28c"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 106000000
+        }
+      },
+      "message": "Transition doesn\u0027t have explicit remote, search filters for match for {id\u003d61 t\u003dOPEN f\u003d0x0 trk\u003d0 r\u003d[0@Point(0, 0)] c\u003d[{null m\u003dOPEN f\u003dIN_TASK_WITH_EMBEDDED_ACTIVITY|FILLS_TASK leash\u003dSurface(name\u003dActivityRecord{ce1c208 u0 com.android.settings/.SubSettings)/@0x2dec24c sb\u003dRect(0, 0 - 0, 0) eb\u003dRect(0, 0 - 1440, 3120) d\u003d-1-\u003e0 r\u003d-1-\u003e0:-1},{null m\u003dTO_BACK f\u003dIN_TASK_WITH_EMBEDDED_ACTIVITY|FILLS_TASK leash\u003dSurface(name\u003dActivityRecord{2769085 u0 com.android.settings/.SubSettings)/@0xad41295 sb\u003dRect(0, 0 - 1440, 3120) eb\u003dRect(0, 0 - 1440, 3120) d\u003d0}]}"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 106000000
+        }
+      },
+      "message": " Checking filter Pair{{types\u003d[] flags\u003d0x0] notFlags\u003d0x0 checks\u003d[{atype\u003ddream independent\u003dtrue modes\u003d[OPEN,TO_FRONT] flags\u003dNONE mustBeTask\u003dfalse order\u003dANY topActivity\u003dnull},{atype\u003dhome independent\u003dtrue modes\u003d[CLOSE,TO_BACK] flags\u003dNONE mustBeTask\u003dfalse order\u003dANY topActivity\u003dnull}]} RemoteTransition { remoteTransition \u003d android.window.IRemoteTransition$Stub$Proxy@ab965c9, appThread \u003d android.app.IApplicationThread$Stub$Proxy@69c4ce, debugName \u003d LauncherToDream }}"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 106000000
+        }
+      },
+      "message": " Checking filter Pair{{types\u003d[] flags\u003d0x0] notFlags\u003d0x100 checks\u003d[{atype\u003dhome independent\u003dtrue modes\u003d[OPEN,TO_FRONT] flags\u003dNONE mustBeTask\u003dfalse order\u003dTOP topActivity\u003dComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}},{atype\u003dstandard independent\u003dtrue modes\u003d[CLOSE,TO_BACK] flags\u003dNONE mustBeTask\u003dfalse order\u003dANY topActivity\u003dnull}]} RemoteTransition { remoteTransition \u003d android.window.IRemoteTransition$Stub$Proxy@c53bfef, appThread \u003d android.app.IApplicationThread$Stub$Proxy@5fdbafc, debugName \u003d QuickstepLaunchHome }}"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 106000000
+        }
+      },
+      "message": " Delegate animation for #61 to null"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 106000000
+        }
+      },
+      "message": " try handler com.android.wm.shell.transition.DefaultTransitionHandler@6f7add5"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 107000000
+        }
+      },
+      "message": "start default transition animation, info \u003d {id\u003d61 t\u003dOPEN f\u003d0x0 trk\u003d0 r\u003d[0@Point(0, 0)] c\u003d[{null m\u003dOPEN f\u003dIN_TASK_WITH_EMBEDDED_ACTIVITY|FILLS_TASK leash\u003dSurface(name\u003dActivityRecord{ce1c208 u0 com.android.settings/.SubSettings)/@0x2dec24c sb\u003dRect(0, 0 - 0, 0) eb\u003dRect(0, 0 - 1440, 3120) d\u003d-1-\u003e0 r\u003d-1-\u003e0:-1},{null m\u003dTO_BACK f\u003dIN_TASK_WITH_EMBEDDED_ACTIVITY|FILLS_TASK leash\u003dSurface(name\u003dActivityRecord{2769085 u0 com.android.settings/.SubSettings)/@0xad41295 sb\u003dRect(0, 0 - 1440, 3120) eb\u003dRect(0, 0 - 1440, 3120) d\u003d0}]}"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 108000000
+        }
+      },
+      "message": "loadAnimation: anim\u003dandroid.view.animation.AnimationSet@9304311 animAttr\u003d0x5 type\u003dOPEN isEntrance\u003dfalse"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 117000000
+        }
+      },
+      "message": "getUserSwitchability-0"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 117000000
+        }
+      },
+      "message": "TM.isInCall"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 118000000
+        }
+      },
+      "message": "hasUserRestriction-DISALLOW_USER_SWITCH"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 118000000
+        }
+      },
+      "message": "getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2108,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 118000000
+        }
+      },
+      "message": "isUserUnlocked-USER_SYSTEM"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2110,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 124000000
+        }
+      },
+      "message": "getUserSwitchability-0"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2110,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 124000000
+        }
+      },
+      "message": "TM.isInCall"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2110,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 125000000
+        }
+      },
+      "message": "hasUserRestriction-DISALLOW_USER_SWITCH"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2110,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 125000000
+        }
+      },
+      "message": "getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 560,
+        "tid": 2110,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "SystemServerTiming",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 125000000
+        }
+      },
+      "message": "isUserUnlocked-USER_SYSTEM"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 148000000
+        }
+      },
+      "message": "loadAnimation: anim\u003dandroid.view.animation.AnimationSet@9b85a02 animAttr\u003d0x4 type\u003dOPEN isEntrance\u003dtrue"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 199000000
+        }
+      },
+      "message": " animated by com.android.wm.shell.transition.DefaultTransitionHandler@6f7add5"
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 560,
+        "tid": 2110,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "ImeTracker",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 306000000
+        }
+      },
+      "message": "com.android.settings:d16edf8e: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW"
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 560,
+        "tid": 2110,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "ImeTracker",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 308000000
+        }
+      },
+      "message": "com.android.settings:d16edf8e: onCancelled at PHASE_SERVER_SHOULD_HIDE"
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 1588,
+        "tid": 1588,
+        "applicationId": "com.google.android.inputmethod.latin",
+        "processName": "com.google.android.inputmethod.latin",
+        "tag": "GoogleInputMethodService",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 310000000
+        }
+      },
+      "message": "GoogleInputMethodService.onFinishInput():3227 "
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 1588,
+        "tid": 1588,
+        "applicationId": "com.google.android.inputmethod.latin",
+        "processName": "com.google.android.inputmethod.latin",
+        "tag": "GoogleInputMethodService",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 311000000
+        }
+      },
+      "message": "GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes \u003d 0, unlocked \u003d true"
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 1588,
+        "tid": 1588,
+        "applicationId": "com.google.android.inputmethod.latin",
+        "processName": "com.google.android.inputmethod.latin",
+        "tag": "GoogleInputMethodService",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 311000000
+        }
+      },
+      "message": "GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType\u003d0x0(NULL) imeOptions\u003d0x0 privateImeOptions\u003dnull actionName\u003dUNSPECIFIED actionLabel\u003dnull actionId\u003d0 initialSelStart\u003d-1 initialSelEnd\u003d-1 initialCapsMode\u003d0x0 hintText\u003dnull label\u003dnull packageName\u003dcom.android.settings fieldId\u003d0 fieldName\u003dnull extras\u003dnull}, false)"
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 1588,
+        "tid": 1588,
+        "applicationId": "com.google.android.inputmethod.latin",
+        "processName": "com.google.android.inputmethod.latin",
+        "tag": "GoogleInputMethodService",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 312000000
+        }
+      },
+      "message": "GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState \u003d false"
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 1588,
+        "tid": 1588,
+        "applicationId": "com.google.android.inputmethod.latin",
+        "processName": "com.google.android.inputmethod.latin",
+        "tag": "GoogleInputMethodService",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 313000000
+        }
+      },
+      "message": "GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes \u003d 2, unlocked \u003d true"
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 1741,
+        "tid": 1741,
+        "applicationId": "com.google.android.gms",
+        "processName": "com.google.android.gms",
+        "tag": "NearbySharing",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 334000000
+        }
+      },
+      "message": "SharingTileService destroyed [CONTEXT service_id\u003d194 ]"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 670000000
+        }
+      },
+      "message": "Transition animation finished (aborted\u003dfalse), notifying core (#61)android.os.BinderProxy@eeb31d9@0"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 560,
+        "tid": 584,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "WindowManager",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 672000000
+        }
+      },
+      "message": "Finish Transition #61: created at 03-04 12:10:58.863 collect-started\u003d0.271ms request-sent\u003d2.652ms started\u003d9.194ms ready\u003d19.766ms sent\u003d241.196ms finished\u003d808.849ms"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 674000000
+        }
+      },
+      "message": "Track 0 became idle"
+    },
+    {
+      "header": {
+        "logLevel": "VERBOSE",
+        "pid": 1359,
+        "tid": 1390,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "WindowManagerShell",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 674000000
+        }
+      },
+      "message": "All active transition animations finished"
+    },
+    {
+      "header": {
+        "logLevel": "WARN",
+        "pid": 560,
+        "tid": 587,
+        "applicationId": "system_server",
+        "processName": "system_server",
+        "tag": "ProcessStats",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 677000000
+        }
+      },
+      "message": "Tracking association SourceState{759bd5a com.android.settings/1000 BTop #8331} whose proc state 2 is better than process ProcessState{fbd39ec com.google.android.apps.wellbeing/10128 pkg\u003dcom.google.android.apps.wellbeing} proc state 13 (70 skipped)"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "DashboardFragment",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 692000000
+        }
+      },
+      "message": "unregister observer: @825bd6a, uri: content://com.google.android.apps.miphone.aiai.translate.settings.settingsui.SettingsSummaryContentProvider/getSummary"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "DashboardFragment",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 693000000
+        }
+      },
+      "message": "unregister observer: @888299, uri: content://com.google.android.settings.intelligence.modules.routines/getText/Summary"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7203,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "DashboardFragment",
+        "timestamp": {
+          "seconds": 1709534459,
+          "nanos": 693000000
+        }
+      },
+      "message": "unregister observer: @21c7e12, uri: content://com.android.settings.dashboard.SummaryProvider/user"
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 1649,
+        "tid": 1820,
+        "applicationId": "com.google.android.as",
+        "processName": "com.google.android.as",
+        "tag": "AiAiEcho",
+        "timestamp": {
+          "seconds": 1709534460,
+          "nanos": 8000000
+        }
+      },
+      "message": "Predicting[0]: "
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 1649,
+        "tid": 1820,
+        "applicationId": "com.google.android.as",
+        "processName": "com.google.android.as",
+        "tag": "AiAiEcho",
+        "timestamp": {
+          "seconds": 1709534460,
+          "nanos": 8000000
+        }
+      },
+      "message": "EchoTargets: \nFiltered by AiAi flag check: "
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 1649,
+        "tid": 1820,
+        "applicationId": "com.google.android.as",
+        "processName": "com.google.android.as",
+        "tag": "AiAiEcho",
+        "timestamp": {
+          "seconds": 1709534460,
+          "nanos": 8000000
+        }
+      },
+      "message": "Ranked targets strategy: SORT, count: 0, ranking metadata: "
+    },
+    {
+      "header": {
+        "logLevel": "INFO",
+        "pid": 1649,
+        "tid": 1820,
+        "applicationId": "com.google.android.as",
+        "processName": "com.google.android.as",
+        "tag": "AiAiEcho",
+        "timestamp": {
+          "seconds": 1709534460,
+          "nanos": 10000000
+        }
+      },
+      "message": "#postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types\u003d[])"
+    },
+    {
+      "header": {
+        "logLevel": "WARN",
+        "pid": 1359,
+        "tid": 1359,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "PageIndicator",
+        "timestamp": {
+          "seconds": 1709534460,
+          "nanos": 33000000
+        }
+      },
+      "message": "Total number of pages invalid: 0. Assuming 1 page."
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 1359,
+        "tid": 1407,
+        "applicationId": "com.android.systemui",
+        "processName": "com.android.systemui",
+        "tag": "EGL_emulation",
+        "timestamp": {
+          "seconds": 1709534460,
+          "nanos": 73000000
+        }
+      },
+      "message": "app_time_stats: avg\u003d60045.98ms min\u003d60045.98ms max\u003d60045.98ms count\u003d1"
+    },
+    {
+      "header": {
+        "logLevel": "DEBUG",
+        "pid": 7203,
+        "tid": 7222,
+        "applicationId": "com.android.settings",
+        "processName": "com.android.settings",
+        "tag": "EGL_emulation",
+        "timestamp": {
+          "seconds": 1709534460,
+          "nanos": 589000000
+        }
+      },
+      "message": "app_time_stats: avg\u003d68.39ms min\u003d1.47ms max\u003d1153.06ms count\u003d19"
+    }
+  ]
+}

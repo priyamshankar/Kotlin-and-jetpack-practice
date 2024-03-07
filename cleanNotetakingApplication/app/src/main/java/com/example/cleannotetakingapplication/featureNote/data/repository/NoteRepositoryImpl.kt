@@ -21,7 +21,6 @@ class NoteRepositoryImpl(
     }
 
     override suspend fun deleteNote(note: Note) {
-        TODO("Not yet implemented")
         return dao.deleteNOte(note)
     }
 }
