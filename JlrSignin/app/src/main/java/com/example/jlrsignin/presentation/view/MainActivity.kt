@@ -40,7 +40,7 @@ class MainActivity : ComponentActivity() {
                 ) {
 //                    Greeting("Android")
 //                    EnterPinComposable(modifier = Modifier)
-                    signinComposable(modifier = Modifier)
+//                    signinComposable(modifier = Modifier)
                 }
             }
         }
