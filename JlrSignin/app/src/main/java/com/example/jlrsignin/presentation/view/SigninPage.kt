@@ -44,23 +44,26 @@ fun signinComposable(modifier: Modifier = Modifier) {
         Text(
             text = "SignIn User",
             fontWeight = FontWeight.Bold,
-        fontSize = 32.sp,
-            modifier = Modifier.fillMaxWidth().padding(10.dp),
-            textAlign = TextAlign.Center)
+            fontSize = 32.sp,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp),
+            textAlign = TextAlign.Center
+        )
         TextField(
             value = userId,
             onValueChange = { userId = it },
-            label = { Text(text = "user Name")},
+            label = { Text(text = "user Name") },
             singleLine = true
         )
         TextField(
             value = password,
             onValueChange = { password = it },
-            label = { Text(text = "Password")},
+            label = { Text(text = "Password") },
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
         )
-        Button(onClick = { /*TODO*/ },modifier=modifier.padding(5.dp)) {
+        Button(onClick = { /*TODO*/ }, modifier = modifier.padding(5.dp)) {
             Text(text = "SignIn")
         }
     }
