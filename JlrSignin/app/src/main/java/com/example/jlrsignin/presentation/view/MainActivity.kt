@@ -33,10 +33,14 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
 
                 Surface(
-                    modifier = Modifier.fillMaxSize().background(Color.LightGray),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.LightGray),
                     color = MaterialTheme.colorScheme.background
                 ) {
 //                    Greeting("Android")
+//                    EnterPinComposable(modifier = Modifier)
+                    signinComposable(modifier = Modifier)
                 }
             }
         }
