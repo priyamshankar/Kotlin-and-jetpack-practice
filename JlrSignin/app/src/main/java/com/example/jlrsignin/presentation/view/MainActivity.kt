@@ -20,8 +20,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.jlrsignin.domain.usecase.SigninUsecase
 import com.example.jlrsignin.ui.theme.JlrSigninTheme
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -61,10 +59,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             }
         }
     }
-//    coroutineScope {
-//        val text = async { SigninUsecase().invoke() }
-//        t = text.await()
-//    }
+
 
     Text(
         text = "Hello $t!",
