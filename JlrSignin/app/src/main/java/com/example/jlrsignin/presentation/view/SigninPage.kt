@@ -11,6 +11,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -25,16 +26,17 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.jlrsignin.presentation.viewModel.SigninViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
-fun signinComposable(modifier: Modifier = Modifier) {
-    var userId by remember {
-        mutableStateOf("")
-    }
-
-    var password by remember {
-        mutableStateOf("")
-    }
+fun signinComposable(
+    modifier: Modifier = Modifier,
+    viewModel: SigninViewModel = viewModel() //To check if it is good practice or not
+) {
+    val userId = viewModel.username.collectAsState().value
+    val password = viewModel.password.collectAsState().value
+    val uiState = viewModel.uiState.collectAsState().value
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -53,13 +55,13 @@ fun signinComposable(modifier: Modifier = Modifier) {
         )
         TextField(
             value = userId,
-            onValueChange = { userId = it },
+            onValueChange = { viewModel.onUserNameChange(it) },
             label = { Text(text = "user Name") },
             singleLine = true
         )
         TextField(
             value = password,
-            onValueChange = { password = it },
+            onValueChange = { viewModel.onPasswordChange(it) },
             label = { Text(text = "Password") },
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
@@ -75,5 +77,5 @@ fun signinComposable(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun signinComposablePreview() {
-    signinComposable()
+//    signinComposable()
 }

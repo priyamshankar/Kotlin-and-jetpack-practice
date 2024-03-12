@@ -7,21 +7,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.jlrsignin.domain.usecase.SigninUsecase
+import com.example.jlrsignin.presentation.view.navigation.Navigation
 import com.example.jlrsignin.ui.theme.JlrSigninTheme
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,41 +25,9 @@ class MainActivity : ComponentActivity() {
                         .background(Color.LightGray),
                     color = MaterialTheme.colorScheme.background
                 ) {
-//                    Greeting("Android")
-//                    EnterPinComposable(modifier = Modifier)
-//                    signinComposable(modifier = Modifier)
+                    Navigation()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    var t by remember {
-        mutableStateOf("response code 420")
-    }
-    LaunchedEffect(Unit) {
-        launch {
-            val newText = SigninUsecase().invoke()
-            withContext(Dispatchers.Main) {
-
-                t = newText
-            }
-        }
-    }
-
-
-    Text(
-        text = "Hello $t!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    JlrSigninTheme {
-        Greeting("Android")
     }
 }
