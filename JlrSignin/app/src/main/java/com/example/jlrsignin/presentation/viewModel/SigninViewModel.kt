@@ -20,9 +20,11 @@ class SigninViewModel : ViewModel() {
     val password: StateFlow<String> = _password.asStateFlow()
 
     // UI state (optional, can represent loading, success, error)
-    private val _uiState = MutableStateFlow<UiStateResponse>(UiStateResponse.Loading)
+    private val _uiState = MutableStateFlow<UiStateResponse>(UiStateResponse.SuccessButNoName)
     val uiState: StateFlow<UiStateResponse> = _uiState.asStateFlow()
 
+//    private val _loadingView = MutableStateFlow("")
+//    val loadingView: StateFlow<String> = _loadingView.asStateFlow()
 
 
     var namePresent: Boolean = false
@@ -32,12 +34,29 @@ class SigninViewModel : ViewModel() {
         _username.value = newUserName
     }
 
-    fun onPasswordChange (newPassword : String){
+    fun onPasswordChange(newPassword: String) {
         _password.value = newPassword
     }
 
-    val verificationSuccess: Boolean =
-        VerificationUserCase().verifyUser(User("priyamshankar.5", "priyam", "1234"))
+    var verificationSuccess: Boolean = false
 
+    fun onSigninButtonClicked(userIdData: String, passwordData: String) {
 
+        _uiState.value = UiStateResponse.Loading
+
+        verificationSuccess = VerificationUserCase().verifyUser(
+            User(
+                userIdData, passwordData,
+                null, null
+            )
+        )
+
+        if(verificationSuccess){
+            _uiState.value = UiStateResponse.Success
+        }else {
+            _uiState.value = UiStateResponse.verification_Failed
+        }
+
+    }
 }
+

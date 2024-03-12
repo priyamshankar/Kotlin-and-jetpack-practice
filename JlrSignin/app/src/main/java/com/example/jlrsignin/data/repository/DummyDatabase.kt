@@ -6,7 +6,7 @@ object DummyDatabase {
     private var user: User? = null
 
     fun getUser(): User {
-        return user ?: User("", null, null)
+        return user ?: User("abcd", "abcd", null, null)
     }
 
     fun updateName(newUser: User): Int {

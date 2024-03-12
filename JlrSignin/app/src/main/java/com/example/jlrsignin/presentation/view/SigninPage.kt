@@ -2,6 +2,7 @@ package com.example.jlrsignin.presentation.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -28,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jlrsignin.presentation.viewModel.SigninViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.jlrsignin.presentation.viewModel.UiStateResponse
 
 @Composable
 fun signinComposable(
@@ -67,8 +69,39 @@ fun signinComposable(
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             visualTransformation = PasswordVisualTransformation()
         )
-        Button(onClick = { /*TODO*/ }, modifier = modifier.padding(5.dp)) {
+        Button(
+            onClick = { viewModel.onSigninButtonClicked(userId, password) },
+            modifier = modifier.padding(5.dp)
+        ) {
             Text(text = "SignIn")
+        }
+
+        Spacer(modifier = Modifier.padding(20.dp))
+
+        when (uiState) {
+            is UiStateResponse.Error -> {
+                Text(text = "Error Occurred")
+            }
+
+            is UiStateResponse.Loading -> {
+                Text(text = "Loading")
+            }
+
+            is UiStateResponse.Success -> {
+                Text(text = "Login Success")
+            }
+
+            is UiStateResponse.SuccessButNoName -> {
+                Text(text = "Success But no Name")
+            }
+
+            is UiStateResponse.SuccessButNoPin -> {
+                Text(text = "Success but no Pin")
+            }
+
+            is UiStateResponse.verification_Failed -> {
+                Text(text = "Verification Failed")
+            }
         }
     }
 }
