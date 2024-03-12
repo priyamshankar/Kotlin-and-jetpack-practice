@@ -3,8 +3,11 @@ package com.example.jlrsignin.presentation.viewModel
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.lifecycle.ViewModel
+import androidx.navigation.NavController
+import com.example.jlrsignin.domain.usecase.GetDataUsercase
 import com.example.jlrsignin.domain.usecase.VerificationUserCase
 import com.example.jlrsignin.domain.usecase.model.User
+import com.example.jlrsignin.presentation.view.navigation.Screen
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -40,7 +43,7 @@ class SigninViewModel : ViewModel() {
 
     var verificationSuccess: Boolean = false
 
-    fun onSigninButtonClicked(userIdData: String, passwordData: String) {
+    fun onSigninButtonClicked(userIdData: String, passwordData: String,navController: NavController) {
 
         _uiState.value = UiStateResponse.Loading
 
@@ -53,10 +56,39 @@ class SigninViewModel : ViewModel() {
 
         if(verificationSuccess){
             _uiState.value = UiStateResponse.Success
+            CheckPinAndName(User(
+                userIdData, passwordData,
+                null, null
+            ))
+
+            nextPageLogic(navController)
+
         }else {
             _uiState.value = UiStateResponse.verification_Failed
         }
 
     }
-}
 
+    fun CheckPinAndName (user: User){
+        namePresent = GetDataUsercase().checkName(user)
+        pinPresent = GetDataUsercase().checkPin(user)
+    }
+
+    fun nextPageLogic(navController: NavController){
+        println("outside if")
+        if(!namePresent){
+            //write the logic of name page navigator
+            namePresent = true //remove this, this is mimicking database
+            navController.navigate(Screen.name_page.route)
+            println("inside if")
+        }
+        if(!pinPresent){
+            pinPresent=true //remove this, this is mimicking database
+            //write the logic of pin page navigator
+            navController.navigate(Screen.pin_page.route)
+        }
+        if(namePresent && pinPresent){
+            //go to the welcome page
+        }
+    }
+}

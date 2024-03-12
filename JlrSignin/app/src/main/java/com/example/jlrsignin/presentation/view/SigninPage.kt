@@ -29,12 +29,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jlrsignin.presentation.viewModel.SigninViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.jlrsignin.presentation.viewModel.UiStateResponse
 
 @Composable
 fun signinComposable(
     modifier: Modifier = Modifier,
-    viewModel: SigninViewModel = viewModel() //To check if it is good practice or not
+    viewModel: SigninViewModel = viewModel(), //To check if it is good practice or not
+    navController: NavController
 ) {
     val userId = viewModel.username.collectAsState().value
     val password = viewModel.password.collectAsState().value
@@ -70,7 +72,7 @@ fun signinComposable(
             visualTransformation = PasswordVisualTransformation()
         )
         Button(
-            onClick = { viewModel.onSigninButtonClicked(userId, password) },
+            onClick = { viewModel.onSigninButtonClicked(userId, password, navController = navController) },
             modifier = modifier.padding(5.dp)
         ) {
             Text(text = "SignIn")
