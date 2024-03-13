@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -22,6 +23,7 @@ import androidx.compose.ui.unit.sp
 import com.example.jlrsignin.presentation.viewModel.SigninViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import kotlinx.coroutines.launch
 
 @Composable
 fun EnterNameComposable(
@@ -30,6 +32,7 @@ fun EnterNameComposable(
     navController: NavController
 ) {
     val nameVar1 = viewModel.name.collectAsState().value
+    val scope = rememberCoroutineScope()
 
     Column(
         modifier = modifier
@@ -47,13 +50,17 @@ fun EnterNameComposable(
                 .padding(10.dp),
             textAlign = TextAlign.Center
         )
-        TextField(value = nameVar1, onValueChange =
+        TextField(
+            value = nameVar1, onValueChange =
             { viewModel.onNameChangeVal(it) },
-            singleLine = true)
+            singleLine = true
+        )
         Button(
             onClick = {
-                      viewModel.onNameNextButtonClicked(navController)
-                      },
+                scope.launch {
+                    viewModel.onNameNextButtonClicked(navController)
+                }
+            },
             modifier = modifier.padding(5.dp)
         ) {
             Text(text = "Next")

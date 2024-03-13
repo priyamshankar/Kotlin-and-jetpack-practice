@@ -11,6 +11,7 @@ import com.example.jlrsignin.domain.usecase.VerificationUserCase
 import com.example.jlrsignin.domain.model.User
 import com.example.jlrsignin.presentation.view.navigation.Screen
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -59,9 +60,9 @@ class SigninViewModel : ViewModel() {
         _name.value = newName
     }
 
-    private var verificationSuccess: Boolean = false
+//    private var verificationSuccess: Boolean = false
 
-    fun onSigninButtonClicked(
+    suspend fun onSigninButtonClicked(
         userIdData: String,
         passwordData: String,
         navController: NavController
@@ -69,27 +70,31 @@ class SigninViewModel : ViewModel() {
 
         _uiState.value = UiStateResponse.Loading
 
-        verificationSuccess = VerificationUserCase().verifyUser(
-            User(
-                userIdData, passwordData,
-                null, null
-            )
-        )
+        viewModelScope.launch {
+            var verificationSuccess = async {
+                VerificationUserCase().verifyUser(
+                    User(
+                        userIdData, passwordData,
+                        null, null
+                    )
+                )
+            }
+//        }
 
-        if (verificationSuccess) {
-            _uiState.value = UiStateResponse.Success
-           viewModelScope.launch {
-               CheckPinAndName(
-                   User(
-                       userIdData, passwordData,
-                       null, null
-                   )
-               )
+//        val job = withContext(Dispatchers.IO) {
+            if (verificationSuccess.await()) {
+                _uiState.value = UiStateResponse.Success
+                CheckPinAndName(
+                    User(
+                        userIdData, passwordData,
+                        null, null
+                    )
+                )
 
-               nextPageLogic(navController)
-           }
-        } else {
-            _uiState.value = UiStateResponse.verification_Failed
+                nextPageLogic(navController)
+            } else {
+                _uiState.value = UiStateResponse.verification_Failed
+            }
         }
 
     }
@@ -100,42 +105,46 @@ class SigninViewModel : ViewModel() {
 //        _pinP.value = GetDataUsercase().checkPin(user)
 ////        println(pinp.value)
         val hasName = withContext(Dispatchers.IO) {
-            GetDataUsercase().checkName(user)
+            async {
+                GetDataUsercase().checkName(user)
+            }
         }
         val hasPin = withContext(Dispatchers.IO) {
-            GetDataUsercase().checkPin(user)
+            async {
+                GetDataUsercase().checkPin(user)
+            }
         }
-        _nameP.value = hasName
-        _pinP.value = hasPin
+        _nameP.value = hasName.await()
+        _pinP.value = hasPin.await()
     }
 
     private fun nextPageLogic(navController: NavController) {
 //        viewModelScope.launch {
 
 
-            if (!nameP.value) {
-                //write the logic of name page navigator
+        if (!nameP.value) {
+            //write the logic of name page navigator
 //                _nameP.value = true //remove this, this is mimicking database push result
-                println("inside name p ${pinp.value}")
-                navController.navigate(Screen.name_page.route)
-                println("inside name p ${pinp.value}")
-                return
+            println("inside name p ${pinp.value}")
+            navController.navigate(Screen.name_page.route)
+            println("inside name p ${pinp.value}")
+            return
 //                return@launch
-            } else if (!pinp.value) {
+        } else if (!pinp.value) {
 //                _pinP.value = true //remove this, this is mimicking database
-                println("inside pin ${pinp.value}")
-                //write the logic of pin page navigator
-                navController.navigate(Screen.pin_page.route)
+            println("inside pin ${pinp.value}")
+            //write the logic of pin page navigator
+            navController.navigate(Screen.pin_page.route)
 //                return@launch
-                return
-            } else
+            return
+        } else
 //            if (nameP.value && pinp.value)
-            {
-                println(pinp.value)
-                //go to the welcome page
-                navController.navigate(Screen.welcomePage.route)
+        {
+            println(pinp.value)
+            //go to the welcome page
+            navController.navigate(Screen.welcomePage.route)
 //                return@launch
-            }
+        }
 //        }
     }
 
@@ -145,13 +154,29 @@ class SigninViewModel : ViewModel() {
 
     fun onPinNextButtonClicked(navController: NavController) {
 //        UpdateUsecase().updatePin(user)
-        updateUsecase.updatePin(user = User("", "", "", ""))
-        nextPageLogic(navController)
+//        val rel = viewModelScope(Dispatchers.IO) {
+//             async{
+        //            }
+//        }
+//        rel.join()
+        viewModelScope.launch {
+
+            updateUsecase.updatePin(user = User("", "", "", ""))
+
+            nextPageLogic(navController)
+        }
     }
 
-    fun onNameNextButtonClicked(navController: NavController) {
+    suspend fun onNameNextButtonClicked(navController: NavController) {
+//        val job = withContext(Dispatchers.IO) {
+//            async {
+        viewModelScope.launch {
 
-        updateUsecase.updateName(user = User("", "", "", ""))
+
+            updateUsecase.updateName(user = User("", "", "", ""))
+        }
+//        }
+//        job.join()
         nextPageLogic(navController)
     }
 }

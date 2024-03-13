@@ -16,6 +16,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -31,6 +32,7 @@ import com.example.jlrsignin.presentation.viewModel.SigninViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.jlrsignin.presentation.viewModel.UiStateResponse
+import kotlinx.coroutines.launch
 
 @Composable
 fun signinComposable(
@@ -41,6 +43,7 @@ fun signinComposable(
     val userId = viewModel.username.collectAsState().value
     val password = viewModel.password.collectAsState().value
     val uiState = viewModel.uiState.collectAsState().value
+    val scope = rememberCoroutineScope()
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -72,7 +75,13 @@ fun signinComposable(
             visualTransformation = PasswordVisualTransformation()
         )
         Button(
-            onClick = { viewModel.onSigninButtonClicked(userId, password, navController = navController) },
+
+
+            onClick = {
+                scope.launch {
+                    viewModel.onSigninButtonClicked(userId, password, navController = navController)
+                }
+            },
             modifier = modifier.padding(5.dp)
         ) {
             Text(text = "SignIn")
