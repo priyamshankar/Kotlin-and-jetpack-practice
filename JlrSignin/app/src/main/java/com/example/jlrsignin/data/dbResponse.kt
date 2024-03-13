@@ -1,4 +1,4 @@
-package com.example.jlrsignin.data.repository
+package com.example.jlrsignin.data
 
 object dbResponse {
     val responseOk : Int = 200;

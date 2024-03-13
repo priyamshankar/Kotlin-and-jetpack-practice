@@ -1,7 +1,8 @@
 package com.example.jlrsignin.data.repository
 
-import com.example.jlrsignin.domain.usecase.model.User
-import com.example.jlrsignin.domain.usecase.repository.UserRepository
+import com.example.jlrsignin.data.DummyDatabase
+import com.example.jlrsignin.domain.model.User
+import com.example.jlrsignin.domain.repository.UserRepository
 
 class userRepositoryImpl : UserRepository {
     override fun getUser(): User {

@@ -1,6 +1,6 @@
-package com.example.jlrsignin.domain.usecase.repository
+package com.example.jlrsignin.domain.repository
 
-import com.example.jlrsignin.domain.usecase.model.User
+import com.example.jlrsignin.domain.model.User
 
 interface UserRepository {
     fun getUser(): User

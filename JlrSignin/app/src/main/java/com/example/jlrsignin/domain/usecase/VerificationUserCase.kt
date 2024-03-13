@@ -1,7 +1,7 @@
 package com.example.jlrsignin.domain.usecase
 
-import com.example.jlrsignin.data.repository.DummyDatabase
-import com.example.jlrsignin.domain.usecase.model.User
+import com.example.jlrsignin.data.DummyDatabase
+import com.example.jlrsignin.domain.model.User
 
 class VerificationUserCase {
     fun verifyUser(userData: User): Boolean {

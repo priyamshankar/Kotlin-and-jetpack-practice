@@ -1,4 +1,4 @@
-package com.example.jlrsignin.domain.usecase.model
+package com.example.jlrsignin.domain.model
 
 data class User(
     val userName: String,

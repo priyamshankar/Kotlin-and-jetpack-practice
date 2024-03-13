@@ -1,12 +1,12 @@
-package com.example.jlrsignin.data.repository
+package com.example.jlrsignin.data
 
-import com.example.jlrsignin.domain.usecase.model.User
+import com.example.jlrsignin.domain.model.User
 
 object DummyDatabase {
     private var user: User? = null
 
     fun getUser(): User {
-        return user ?: User("abcd", "abcd", "priyam shankar", null)
+        return user ?: User("abcd", "abcd", null, null)
     }
 
     fun updateName(newUser: User): Int {

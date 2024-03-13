@@ -1,37 +1,51 @@
 package com.example.jlrsignin.presentation.viewModel
 
+import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
+import com.example.jlrsignin.data.DependencyProvider
 import com.example.jlrsignin.domain.usecase.GetDataUsercase
 import com.example.jlrsignin.domain.usecase.VerificationUserCase
-import com.example.jlrsignin.domain.usecase.model.User
+import com.example.jlrsignin.domain.model.User
 import com.example.jlrsignin.presentation.view.navigation.Screen
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class SigninViewModel : ViewModel() {
-    //    val nameTrigger by remember {
-//        mutableStateOf(null)
-//    }
+
+    private val updateUsecase = DependencyProvider.provideUpdateUseCase()
+
     private val _username = MutableStateFlow("")
     val username: StateFlow<String> = _username.asStateFlow()
 
     private val _password = MutableStateFlow("")
     val password: StateFlow<String> = _password.asStateFlow()
 
-    // UI state (optional, can represent loading, success, error)
     private val _uiState = MutableStateFlow<UiStateResponse>(UiStateResponse.SuccessButNoName)
+
     val uiState: StateFlow<UiStateResponse> = _uiState.asStateFlow()
 
-//    private val _loadingView = MutableStateFlow("")
-//    val loadingView: StateFlow<String> = _loadingView.asStateFlow()
+    private val _pin = MutableStateFlow(0)
+    val pin: StateFlow<Int> = _pin.asStateFlow()
 
+    private val _name = MutableStateFlow("")
+    val name: StateFlow<String> = _name.asStateFlow()
 
-    var namePresent: Boolean = false
-    var pinPresent: Boolean = true
+    private var namePresent: Boolean = true
+    private var pinPresent: Boolean = true
+
+    private var _nameP = mutableStateOf<Boolean>(true)
+    private val nameP: State<Boolean> = _nameP
+
+    private var _pinP = mutableStateOf<Boolean>(true)
+    private val pinp: State<Boolean> = _pinP
+
 
     fun onUserNameChange(newUserName: String) {
         _username.value = newUserName
@@ -41,9 +55,17 @@ class SigninViewModel : ViewModel() {
         _password.value = newPassword
     }
 
-    var verificationSuccess: Boolean = false
+    fun onNameChangeVal(newName: String) {
+        _name.value = newName
+    }
 
-    fun onSigninButtonClicked(userIdData: String, passwordData: String,navController: NavController) {
+    private var verificationSuccess: Boolean = false
+
+    fun onSigninButtonClicked(
+        userIdData: String,
+        passwordData: String,
+        navController: NavController
+    ) {
 
         _uiState.value = UiStateResponse.Loading
 
@@ -54,41 +76,82 @@ class SigninViewModel : ViewModel() {
             )
         )
 
-        if(verificationSuccess){
+        if (verificationSuccess) {
             _uiState.value = UiStateResponse.Success
-            CheckPinAndName(User(
-                userIdData, passwordData,
-                null, null
-            ))
+           viewModelScope.launch {
+               CheckPinAndName(
+                   User(
+                       userIdData, passwordData,
+                       null, null
+                   )
+               )
 
-            nextPageLogic(navController)
-
-        }else {
+               nextPageLogic(navController)
+           }
+        } else {
             _uiState.value = UiStateResponse.verification_Failed
         }
 
     }
 
-    fun CheckPinAndName (user: User){
-        namePresent = GetDataUsercase().checkName(user)
-        pinPresent = GetDataUsercase().checkPin(user)
+    suspend private fun CheckPinAndName(user: User) {
+//        _nameP.value = GetDataUsercase().checkName(user)
+////        println(nameP.value)
+//        _pinP.value = GetDataUsercase().checkPin(user)
+////        println(pinp.value)
+        val hasName = withContext(Dispatchers.IO) {
+            GetDataUsercase().checkName(user)
+        }
+        val hasPin = withContext(Dispatchers.IO) {
+            GetDataUsercase().checkPin(user)
+        }
+        _nameP.value = hasName
+        _pinP.value = hasPin
     }
 
-    fun nextPageLogic(navController: NavController){
-        println("outside if")
-        if(!namePresent){
-            //write the logic of name page navigator
-            namePresent = true //remove this, this is mimicking database
-            navController.navigate(Screen.name_page.route)
-            println("inside if")
-        }
-        if(!pinPresent){
-            pinPresent=true //remove this, this is mimicking database
-            //write the logic of pin page navigator
-            navController.navigate(Screen.pin_page.route)
-        }
-        if(namePresent && pinPresent){
-            //go to the welcome page
-        }
+    private fun nextPageLogic(navController: NavController) {
+//        viewModelScope.launch {
+
+
+            if (!nameP.value) {
+                //write the logic of name page navigator
+//                _nameP.value = true //remove this, this is mimicking database push result
+                println("inside name p ${pinp.value}")
+                navController.navigate(Screen.name_page.route)
+                println("inside name p ${pinp.value}")
+                return
+//                return@launch
+            } else if (!pinp.value) {
+//                _pinP.value = true //remove this, this is mimicking database
+                println("inside pin ${pinp.value}")
+                //write the logic of pin page navigator
+                navController.navigate(Screen.pin_page.route)
+//                return@launch
+                return
+            } else
+//            if (nameP.value && pinp.value)
+            {
+                println(pinp.value)
+                //go to the welcome page
+                navController.navigate(Screen.welcomePage.route)
+//                return@launch
+            }
+//        }
+    }
+
+    fun onPinChangeVal(changedPin: String) {
+        _pin.value = changedPin.toIntOrNull() ?: 0
+    }
+
+    fun onPinNextButtonClicked(navController: NavController) {
+//        UpdateUsecase().updatePin(user)
+        updateUsecase.updatePin(user = User("", "", "", ""))
+        nextPageLogic(navController)
+    }
+
+    fun onNameNextButtonClicked(navController: NavController) {
+
+        updateUsecase.updateName(user = User("", "", "", ""))
+        nextPageLogic(navController)
     }
 }

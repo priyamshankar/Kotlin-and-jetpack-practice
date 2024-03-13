@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.jlrsignin.presentation.view.EnterNameComposable
 import com.example.jlrsignin.presentation.view.EnterPinComposable
+import com.example.jlrsignin.presentation.view.WelcomePage
 import com.example.jlrsignin.presentation.view.signinComposable
 import com.example.jlrsignin.presentation.viewModel.SigninViewModel
 
@@ -21,10 +22,13 @@ fun Navigation() {
             signinComposable(navController= navController)
         }
         composable(route= Screen.name_page.route){
-            EnterNameComposable(modifier = Modifier)
+            EnterNameComposable(modifier = Modifier,navController=navController)
         }
         composable(route = Screen.pin_page.route){
-            EnterPinComposable(modifier = Modifier)
+            EnterPinComposable(modifier = Modifier,navController=navController)
+        }
+        composable(route = Screen.welcomePage.route){
+            WelcomePage()
         }
     }
 }

@@ -10,10 +10,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -22,12 +19,18 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.jlrsignin.presentation.viewModel.SigninViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 
 @Composable
-fun EnterNameComposable(modifier: Modifier) {
-    var nameVar by remember {
-        mutableStateOf("")
-    }
+fun EnterNameComposable(
+    modifier: Modifier,
+    viewModel: SigninViewModel = viewModel(),
+    navController: NavController
+) {
+    val nameVar1 = viewModel.name.collectAsState().value
+
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -44,9 +47,13 @@ fun EnterNameComposable(modifier: Modifier) {
                 .padding(10.dp),
             textAlign = TextAlign.Center
         )
-        TextField(value = nameVar, onValueChange = { nameVar = it })
+        TextField(value = nameVar1, onValueChange =
+            { viewModel.onNameChangeVal(it) },
+            singleLine = true)
         Button(
-            onClick = { /*TODO*/ },
+            onClick = {
+                      viewModel.onNameNextButtonClicked(navController)
+                      },
             modifier = modifier.padding(5.dp)
         ) {
             Text(text = "Next")
@@ -57,5 +64,5 @@ fun EnterNameComposable(modifier: Modifier) {
 @Preview
 @Composable
 private fun Enternameprev() {
-    EnterNameComposable(modifier = Modifier)
+//    EnterNameComposable(modifier = Modifier)
 }
