@@ -38,14 +38,14 @@ class SigninViewModel : ViewModel() {
     private val _name = MutableStateFlow("")
     val name: StateFlow<String> = _name.asStateFlow()
 
-    private var namePresent: Boolean = true
-    private var pinPresent: Boolean = true
+
 
     private var _nameP = mutableStateOf<Boolean>(true)
     private val nameP: State<Boolean> = _nameP
 
     private var _pinP = mutableStateOf<Boolean>(true)
     private val pinp: State<Boolean> = _pinP
+
 
 
     fun onUserNameChange(newUserName: String) {
@@ -79,9 +79,7 @@ class SigninViewModel : ViewModel() {
                     )
                 )
             }
-//        }
 
-//        val job = withContext(Dispatchers.IO) {
             if (verificationSuccess.await()) {
                 _uiState.value = UiStateResponse.Success
                 CheckPinAndName(
@@ -90,6 +88,7 @@ class SigninViewModel : ViewModel() {
                         null, null
                     )
                 )
+                _uiState.value = UiStateResponse.SuccessButNoName
 
                 nextPageLogic(navController)
             } else {
@@ -100,10 +99,7 @@ class SigninViewModel : ViewModel() {
     }
 
     suspend private fun CheckPinAndName(user: User) {
-//        _nameP.value = GetDataUsercase().checkName(user)
-////        println(nameP.value)
-//        _pinP.value = GetDataUsercase().checkPin(user)
-////        println(pinp.value)
+
         val hasName = withContext(Dispatchers.IO) {
             async {
                 GetDataUsercase().checkName(user)
@@ -119,33 +115,20 @@ class SigninViewModel : ViewModel() {
     }
 
     private fun nextPageLogic(navController: NavController) {
-//        viewModelScope.launch {
-
 
         if (!nameP.value) {
-            //write the logic of name page navigator
-//                _nameP.value = true //remove this, this is mimicking database push result
-            println("inside name p ${pinp.value}")
+//            println("inside name p ${pinp.value}")
             navController.navigate(Screen.name_page.route)
-            println("inside name p ${pinp.value}")
+//            println("inside name p ${pinp.value}")
             return
-//                return@launch
         } else if (!pinp.value) {
-//                _pinP.value = true //remove this, this is mimicking database
-            println("inside pin ${pinp.value}")
-            //write the logic of pin page navigator
+//            println("inside pin ${pinp.value}")
             navController.navigate(Screen.pin_page.route)
-//                return@launch
             return
         } else
-//            if (nameP.value && pinp.value)
         {
-            println(pinp.value)
-            //go to the welcome page
             navController.navigate(Screen.welcomePage.route)
-//                return@launch
         }
-//        }
     }
 
     fun onPinChangeVal(changedPin: String) {
@@ -153,30 +136,28 @@ class SigninViewModel : ViewModel() {
     }
 
     fun onPinNextButtonClicked(navController: NavController) {
-//        UpdateUsecase().updatePin(user)
-//        val rel = viewModelScope(Dispatchers.IO) {
-//             async{
-        //            }
-//        }
-//        rel.join()
+        _uiState.value = UiStateResponse.Loading
         viewModelScope.launch {
-
             updateUsecase.updatePin(user = User("", "", "", ""))
-
+            _uiState.value = UiStateResponse.SuccessButNoName
             nextPageLogic(navController)
         }
     }
 
-    suspend fun onNameNextButtonClicked(navController: NavController) {
-//        val job = withContext(Dispatchers.IO) {
-//            async {
+    suspend fun onNameNextButtonClicked(navController: NavController,Name : String) {
+        _uiState.value = UiStateResponse.Loading
+        _name.value = Name
         viewModelScope.launch {
-
-
             updateUsecase.updateName(user = User("", "", "", ""))
+            _uiState.value = UiStateResponse.SuccessButNoName
+            nextPageLogic(navController)
         }
-//        }
-//        job.join()
-        nextPageLogic(navController)
+    }
+
+    suspend fun getUserName(userName: String){
+        viewModelScope.launch {
+            val user:User = GetDataUsercase().getUserdata(user = User(userName,"","",""))
+            _name.value = user.name.toString()
+        }
     }
 }

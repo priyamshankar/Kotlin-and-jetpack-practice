@@ -7,7 +7,7 @@ object DummyDatabase {
 
     suspend fun getUser(): User {
         dummyDelay()
-        return user ?: User("abcd", "abcd", null, null)
+        return user ?: User("abcd", "abcd", null, "null")
     }
 
     suspend fun updateName(newUser: User): Int {

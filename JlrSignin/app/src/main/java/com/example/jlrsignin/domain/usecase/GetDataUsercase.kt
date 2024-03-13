@@ -13,4 +13,8 @@ class GetDataUsercase() {
         var getFetchedData: User = DummyDatabase.getUser()
         return getFetchedData.name != null
     }
+
+    suspend fun getUserdata(user:User) : User{
+        return DummyDatabase.getUser()
+    }
 }

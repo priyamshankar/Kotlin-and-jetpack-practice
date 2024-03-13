@@ -1,10 +1,16 @@
 package com.example.jlrsignin.presentation.view
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
@@ -27,53 +33,117 @@ import com.example.jlrsignin.presentation.viewModel.SigninViewModel
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.graphics.SolidColor
 import androidx.navigation.NavController
+import com.example.jlrsignin.presentation.viewModel.UiStateResponse
+import kotlinx.coroutines.launch
 
 @Composable
 fun EnterPinComposable(
     modifier: Modifier, viewModel: SigninViewModel = viewModel(),
     navController: NavController
 ) {
-    var userPin1 by remember {
-        mutableStateOf("")
-    }
-    var userPin2: Int = 0
+
     val userPin = viewModel.pin.collectAsState().value
+    val uiState = viewModel.uiState.collectAsState().value
 
-    Column(
-        modifier = modifier
-            .fillMaxSize()
-            .background(Color.LightGray)
-            .wrapContentSize(Alignment.Center), horizontalAlignment = Alignment.CenterHorizontally
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier.border(BorderStroke(5.dp, SolidColor(Color.LightGray)))
     ) {
-        Text(
-            text = "Enter Your Pin",
-            fontWeight = FontWeight.Bold,
-            fontSize = 32.sp,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(10.dp),
-            textAlign = TextAlign.Center
-        )
-        TextField(
-            value = userPin.toString(),
-            onValueChange = { viewModel.onPinChangeVal(it) },
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(
-                keyboardType = KeyboardType.NumberPassword
-            ),
-            visualTransformation = PasswordVisualTransformation()
-        )
+        Column {
+            Row(
+                modifier = Modifier
+                    .weight(2.0f)
+                    .fillMaxWidth()
+                    .background(color = Color(0xFF9E1F32))
+            ) {
+            }
 
-        Button(
-            onClick = {
-                viewModel.onPinNextButtonClicked(navController = navController)
-            }, modifier = modifier.padding(5.dp)
+            Row(
+                modifier = Modifier
+                    .weight(1.0f)
+                    .fillMaxWidth()
+                    .background(color = Color(0xFF575355))
+            ) {
+            }
+        }
+
+        Box(
+            modifier = Modifier
+                .background(color = Color(0xFFEFE3E9))
+                .height(400.dp)
+                .width(350.dp)
         ) {
-            Text(text = "Next")
+            Column(
+                modifier = modifier
+                    .fillMaxSize()
+                    .background(Color.LightGray)
+                    .wrapContentSize(Alignment.Center),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = "Enter Your Pin",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 32.sp,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    textAlign = TextAlign.Center
+                )
+                TextField(
+                    value = userPin.toString(),
+                    onValueChange = { viewModel.onPinChangeVal(it) },
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.NumberPassword
+                    ),
+                    visualTransformation = PasswordVisualTransformation()
+                )
+                val scope = rememberCoroutineScope()
+                Button(
+                    onClick = {
+                        scope.launch {
+
+                            viewModel.onPinNextButtonClicked(navController = navController)
+                        }
+                    }, modifier = modifier.padding(5.dp)
+                ) {
+                    Text(text = "Next")
+                }
+
+                when (uiState) {
+                    is UiStateResponse.Error -> {
+                        Text(text = "Error Occurred")
+                    }
+
+                    is UiStateResponse.Loading -> {
+                        Text(text = "Loading")
+                    }
+
+                    is UiStateResponse.Success -> {
+                        Text(text = "Login Success")
+                    }
+
+                    is UiStateResponse.SuccessButNoName -> {
+
+                    }
+
+                    is UiStateResponse.SuccessButNoPin -> {
+                        Text(text = "Success but no Pin")
+                    }
+
+                    is UiStateResponse.verification_Failed -> {
+                        Text(text = "Verification Failed")
+                    }
+                }
+            }
         }
     }
+
+
 }
 
 @Preview
