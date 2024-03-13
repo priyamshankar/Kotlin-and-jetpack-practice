@@ -29,7 +29,8 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun WelcomePage(
-    viewModel: SigninViewModel = viewModel()
+    viewModel: SigninViewModel = viewModel(),
+    userNamePassed : String?
 ) {
     LaunchedEffect(key1 = Unit) {
         viewModel.getUserName("")
@@ -80,5 +81,5 @@ fun WelcomePage(
 @Preview
 @Composable
 private fun welcomePagePrev() {
-    WelcomePage()
+//    WelcomePage()
 }

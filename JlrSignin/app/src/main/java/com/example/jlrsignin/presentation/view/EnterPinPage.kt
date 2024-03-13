@@ -43,7 +43,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun EnterPinComposable(
     modifier: Modifier, viewModel: SigninViewModel = viewModel(),
-    navController: NavController
+    navController: NavController,
+    userNamePassed : String?
 ) {
 
     val userPin = viewModel.pin.collectAsState().value
@@ -107,7 +108,9 @@ fun EnterPinComposable(
                     onClick = {
                         scope.launch {
 
-                            viewModel.onPinNextButtonClicked(navController = navController)
+                            if (userNamePassed != null) {
+                                viewModel.onPinNextButtonClicked(navController = navController,userNamePassed)
+                            }
                         }
                     }, modifier = modifier.padding(5.dp)
                 ) {

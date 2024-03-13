@@ -37,7 +37,8 @@ import kotlinx.coroutines.launch
 fun EnterNameComposable(
     modifier: Modifier,
     viewModel: SigninViewModel = viewModel(),
-    navController: NavController
+    navController: NavController,
+    userNamePassed : String?
 ) {
     val nameVar1 = viewModel.name.collectAsState().value
     val scope = rememberCoroutineScope()
@@ -95,7 +96,9 @@ fun EnterNameComposable(
                 Button(
                     onClick = {
                         scope.launch {
-                            viewModel.onNameNextButtonClicked(navController, nameVar1)
+                            if (userNamePassed != null) {
+                                viewModel.onNameNextButtonClicked(navController, nameVar1, userNamePassed)
+                            }
                         }
                     },
                     modifier = modifier.padding(5.dp)

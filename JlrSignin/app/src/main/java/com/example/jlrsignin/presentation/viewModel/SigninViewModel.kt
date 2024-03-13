@@ -39,13 +39,11 @@ class SigninViewModel : ViewModel() {
     val name: StateFlow<String> = _name.asStateFlow()
 
 
-
     private var _nameP = mutableStateOf<Boolean>(true)
     private val nameP: State<Boolean> = _nameP
 
     private var _pinP = mutableStateOf<Boolean>(true)
     private val pinp: State<Boolean> = _pinP
-
 
 
     fun onUserNameChange(newUserName: String) {
@@ -90,7 +88,7 @@ class SigninViewModel : ViewModel() {
                 )
                 _uiState.value = UiStateResponse.SuccessButNoName
 
-                nextPageLogic(navController)
+                nextPageLogic(navController,userIdData)
             } else {
                 _uiState.value = UiStateResponse.verification_Failed
             }
@@ -114,20 +112,19 @@ class SigninViewModel : ViewModel() {
         _pinP.value = hasPin.await()
     }
 
-    private fun nextPageLogic(navController: NavController) {
+    private fun nextPageLogic(navController: NavController, userNamePassed: String) {
 
         if (!nameP.value) {
 //            println("inside name p ${pinp.value}")
-            navController.navigate(Screen.name_page.route)
+            navController.navigate(Screen.name_page.route + "?userNamePassed=${userNamePassed}")
 //            println("inside name p ${pinp.value}")
             return
         } else if (!pinp.value) {
 //            println("inside pin ${pinp.value}")
-            navController.navigate(Screen.pin_page.route)
+            navController.navigate(Screen.pin_page.route + "?userNamePassed=${userNamePassed}")
             return
-        } else
-        {
-            navController.navigate(Screen.welcomePage.route)
+        } else {
+            navController.navigate(Screen.welcomePage.route + "?userNamePassed=${userNamePassed}")
         }
     }
 
@@ -135,28 +132,32 @@ class SigninViewModel : ViewModel() {
         _pin.value = changedPin.toIntOrNull() ?: 0
     }
 
-    fun onPinNextButtonClicked(navController: NavController) {
+    fun onPinNextButtonClicked(navController: NavController, userName: String) {
         _uiState.value = UiStateResponse.Loading
         viewModelScope.launch {
-            updateUsecase.updatePin(user = User("", "", "", ""))
+            updateUsecase.updatePin(user = User(userName, "", "", ""))
             _uiState.value = UiStateResponse.SuccessButNoName
-            nextPageLogic(navController)
+            nextPageLogic(navController, userName)
         }
     }
 
-    suspend fun onNameNextButtonClicked(navController: NavController,Name : String) {
+    suspend fun onNameNextButtonClicked(
+        navController: NavController,
+        Name: String,
+        userName: String
+    ) {
         _uiState.value = UiStateResponse.Loading
         _name.value = Name
         viewModelScope.launch {
-            updateUsecase.updateName(user = User("", "", "", ""))
+            updateUsecase.updateName(user = User(userName, "", "", ""))
             _uiState.value = UiStateResponse.SuccessButNoName
-            nextPageLogic(navController)
+            nextPageLogic(navController, userName)
         }
     }
 
-    suspend fun getUserName(userName: String){
+    suspend fun getUserName(userName: String) {
         viewModelScope.launch {
-            val user:User = GetDataUsercase().getUserdata(user = User(userName,"","",""))
+            val user: User = GetDataUsercase().getUserdata(user = User(userName, "", "", ""))
             _name.value = user.name.toString()
         }
     }
