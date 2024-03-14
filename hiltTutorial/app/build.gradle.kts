@@ -68,8 +68,8 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-    kapt("com.google.dagger:hilt-android-compiler:2.50")
 //    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.50")
     implementation ("com.google.dagger:hilt-android:2.50")
 //    kapt 'com.google.dagger:hilt-compiler:2.50'
 

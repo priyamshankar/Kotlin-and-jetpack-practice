@@ -5,11 +5,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import com.example.jlrsignin.data.DependencyProvider
+import com.example.jlrsignin.di.DependencyProvider
 import com.example.jlrsignin.domain.usecase.GetDataUsercase
 import com.example.jlrsignin.domain.usecase.VerificationUserCase
 import com.example.jlrsignin.domain.model.User
+import com.example.jlrsignin.domain.usecase.UpdateUsecase
 import com.example.jlrsignin.presentation.view.navigation.Screen
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,10 +19,15 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class SigninViewModel : ViewModel() {
+@HiltViewModel
+class SigninViewModel @Inject constructor(): ViewModel() {
 
-    private val updateUsecase = DependencyProvider.provideUpdateUseCase()
+//    private val updateUsecase = DependencyProvider.provideUpdateUseCase() //di for updateusercase
+
+    @Inject
+    lateinit var updateUsecase: UpdateUsecase
 
     private val _username = MutableStateFlow("")
     val username: StateFlow<String> = _username.asStateFlow()

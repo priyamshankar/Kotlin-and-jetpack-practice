@@ -45,8 +45,8 @@ fun EnterNameComposable(
     val uiState = viewModel.uiState.collectAsState().value
 
     Box(
-        contentAlignment = Alignment.Center,
-        modifier = Modifier.border(BorderStroke(5.dp, SolidColor(Color.LightGray)))
+        contentAlignment = Alignment.Center
+//        modifier = Modifier.border(BorderStroke(5.dp, SolidColor(Color.LightGray)))
     ) {
         Column {
             Row(

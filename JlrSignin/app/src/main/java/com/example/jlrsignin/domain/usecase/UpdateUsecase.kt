@@ -2,8 +2,9 @@ package com.example.jlrsignin.domain.usecase
 
 import com.example.jlrsignin.domain.model.User
 import com.example.jlrsignin.domain.repository.UserRepository
+import javax.inject.Inject
 
-class UpdateUsecase (private val userRepository: UserRepository){
+class UpdateUsecase @Inject constructor(private val userRepository: UserRepository){
     suspend  fun updateName (user: User) {
         userRepository.updateName(user)
     }
